@@ -11,19 +11,19 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    return `It's a Tie!, ${playerSelection} & ${computerSelection}`;
+    return `It's a Tie 🎀!, ${playerSelection} & ${computerSelection}`;
   } else if (playerSelection == "rock" && computerSelection == "paper") {
-    return "You Lose, paper beats rock";
+    return "You Lose ❌😞🌴, paper beats rock";
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    return "You Win!, rock beats scissors";
+    return "You Win ✅💐🎁!, rock beats scissors";
   } else if (playerSelection == "paper" && computerSelection == "rock") {
-    return "You Win!, paper beats rock";
+    return "You Win ✅💐🎁!, paper beats rock";
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
-    return "You Lose, scissors beats paper";
+    return "You Lose ❌😞🌴, scissors beats paper";
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
-    return "You Lose, rock beats scissors";
+    return "You Lose ❌😞🌴, rock beats scissors";
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    return "You Win!, scissors beats paper";
+    return "You Win ✅💐🎁!, scissors beats paper";
   } else {
     return `Invalid player choice, computer chose ${computerSelection}`;
   }
@@ -34,27 +34,25 @@ function playRound(playerSelection, computerSelection) {
 // const computerSelection = getComputerChoice();
 // console.log(playRound(playerSelection, computerSelection));
 
-const NUMBER_OF_ROUNDS = 5;
-
-function game() {
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i++) {
-    try {
-      let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-    } catch (TypeError) {
-      console.log("Exiting, thankyou for playing!");
-      break;
-    }
-    let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-  }
-}
-
+// multi-round game mode
+// const NUMBER_OF_ROUNDS = 5;
+// function game() {
+//   for (let i = 0; i < NUMBER_OF_ROUNDS; i++) {
+//     try {
+//       let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+//     } catch (TypeError) {
+//       console.log("Exiting, thankyou for playing!");
+//       break;
+//     }
+//     let computerSelection = getComputerChoice();
+//     console.log(playRound(playerSelection, computerSelection));
+//   }
+// }
 // game();
 
-//////////////////////////////////////////////////////////////////////////////////
 // For UI
-
 const userInputs = Array.from(document.querySelectorAll("input")).slice(0, 3);
+const compInputs = Array.from(document.querySelectorAll("input")).slice(3);
 const messageElement = document.querySelector("#message");
 
 userInputs.forEach((ele) =>
@@ -62,5 +60,12 @@ userInputs.forEach((ele) =>
     let playerSelection = ele.target.value;
     let computerSelection = getComputerChoice();
     messageElement.textContent = playRound(playerSelection, computerSelection);
+    compInputs.forEach((ele) => {
+      if (ele.value == computerSelection) {
+        ele.removeAttribute("disabled");
+        ele.click();
+        ele.setAttribute("disabled", "disabled");
+      }
+    });
   })
 );

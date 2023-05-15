@@ -1,0 +1,52 @@
+function getComputerChoice() {
+  switch (Math.floor(Math.random(23499) * 3)) {
+    case 0:
+      return "rock";
+    case 1:
+      return "paper";
+    case 2:
+      return "scissors";
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection == computerSelection) {
+    return `It's a Tie!, ${playerSelection} & ${computerSelection}`;
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    return "You Lose, paper beats rock";
+  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    return "You Win!, rock beats scissors";
+  } else if (playerSelection == "paper" && computerSelection == "rock") {
+    return "You Win!, paper beats rock";
+  } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    return "You Lose, scissors beats paper";
+  } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    return "You Lose, rock beats scissors";
+  } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    return "You Win!, scissors beats paper";
+  } else {
+    return `Invalid player choice, computer chose ${computerSelection}`;
+  }
+}
+
+// single run
+// const playerSelection = "rock";
+// const computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+
+const NUMBER_OF_ROUNDS = 5;
+
+function game() {
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i++) {
+    try {
+      let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+    } catch (TypeError) {
+      console.log("Exiting, thankyou for playing!");
+      break;
+    }
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+game();

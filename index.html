@@ -3,8 +3,82 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rock Paper Scissors</title>
-    <script src="scripts.js"></script>
+    <title>Rock Paper Scissors 🪨🖐️✂️</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="heading">Rock Paper Scissors</div>
+      <div class="game">
+        <div class="game-inner">
+          <div class="user">
+            <div class="cell side-heading">YOU</div>
+            <div class="cell">
+              <label for="userRock">Rock 🪨</label
+              ><input
+                type="radio"
+                name="userInput"
+                value="rock"
+                id="userRock"
+              />
+            </div>
+            <div class="cell">
+              <label for="userPaper">Paper 🖐️</label
+              ><input
+                type="radio"
+                name="userInput"
+                value="paper"
+                id="userPaper"
+              />
+            </div>
+            <div class="cell">
+              <label for="userScissors">Scissors ✂️</label
+              ><input
+                type="radio"
+                name="userInput"
+                value="scissors"
+                id="userScissors"
+              />
+            </div>
+          </div>
+          <div class="computer">
+            <div class="cell side-heading">COMPUTER</div>
+
+            <div class="cell">
+              <label for="compRock">Rock 🪨</label
+              ><input
+                type="radio"
+                name="compInput"
+                value="rock"
+                disabled="disabled"
+                id="compRock"
+              />
+            </div>
+            <div class="cell">
+              <label for="compPaper">Paper 🖐️</label
+              ><input
+                type="radio"
+                name="compInput"
+                value="paper"
+                disabled="disabled"
+                id="compPaper"
+              />
+            </div>
+            <div class="cell">
+              <label for="compScissors">Scissors ✂️</label
+              ><input
+                type="radio"
+                name="compInput"
+                value="scissors"
+                disabled="disabled"
+                id="compScissors"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="message" id="message">Click 🪨🖐️✂️ to play!</div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,63 @@
+body {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin: 75px;
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.game {
+  margin: 0 auto;
+  height: 400px;
+  max-width: 500px;
+  border: 2px solid black;
+
+  font-size: 20px;
+}
+
+.game-inner {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+}
+
+.user,
+.computer {
+  padding: 20px;
+}
+
+.user {
+  border-right: 1px solid black;
+}
+
+.side-heading {
+  border-bottom: 1px solid black;
+}
+
+.cell {
+  padding: 20px;
+}
+
+.message {
+  text-align: center;
+  margin-top: 2em;
+}
+
+@media (max-width: 500px) {
+  .message {
+    margin-top: 1em;
+  }
+}

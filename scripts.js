@@ -49,4 +49,18 @@ function game() {
   }
 }
 
-game();
+// game();
+
+//////////////////////////////////////////////////////////////////////////////////
+// For UI
+
+const userInputs = Array.from(document.querySelectorAll("input")).slice(0, 3);
+const messageElement = document.querySelector("#message");
+
+userInputs.forEach((ele) =>
+  ele.addEventListener("click", (ele) => {
+    let playerSelection = ele.target.value;
+    let computerSelection = getComputerChoice();
+    messageElement.textContent = playRound(playerSelection, computerSelection);
+  })
+);

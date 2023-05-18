@@ -5,6 +5,6 @@
 DEMO: https://sibi361.github.io/TOP_rock-paper-scissors/
 
 ### TODO:
-- [ ] Update win status in middle of game div for better visibility
-- [ ] Implement points based reporting
+- [x] Improve win status visibility
+- [x] Implement points based reporting
 - [ ] Add two player mode

@@ -1,11 +1,11 @@
 body {
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.container {
-  height: 100vh;
-
+.container,
+.game,
+.game-bottom {
   display: flex;
   flex-direction: column;
 }
@@ -21,10 +21,8 @@ body {
 
 .game {
   margin: 0 auto;
-  height: 400px;
   max-width: 500px;
   border: 2px solid black;
-
   font-size: 20px;
 }
 
@@ -44,6 +42,8 @@ body {
 }
 
 .side-heading {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid black;
 }
 
@@ -51,9 +51,15 @@ body {
   padding: 20px;
 }
 
+.game-bottom {
+  align-self: center;
+  min-height: 4em;
+  justify-content: center;
+}
+
 .message {
+  margin: 1em;
   text-align: center;
-  margin-top: 2em;
 }
 
 @media (max-width: 500px) {

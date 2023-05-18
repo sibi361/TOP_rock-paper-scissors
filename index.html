@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rock Paper Scissors 🪨🖐️✂️</title>
+    <title>Rock Paper Scissors ✊🖐️✂️</title>
     <link rel="stylesheet" href="style.css" />
     <script src="scripts.js" defer></script>
   </head>
@@ -13,9 +13,12 @@
       <div class="game">
         <div class="game-inner">
           <div class="user">
-            <div class="cell side-heading">YOU</div>
+            <div class="cell side-heading">
+              <div class="side-heading-left">YOU</div>
+              <div class="side-heading-right">&nbsp;0</div>
+            </div>
             <div class="cell">
-              <label for="userRock">Rock 🪨</label
+              <label for="userRock">Rock ✊</label
               ><input
                 type="radio"
                 name="userInput"
@@ -43,10 +46,13 @@
             </div>
           </div>
           <div class="computer">
-            <div class="cell side-heading">COMPUTER</div>
+            <div class="cell side-heading">
+              <div class="side-heading-left">COMPUTER</div>
+              <div class="side-heading-right">&nbsp;0</div>
+            </div>
 
             <div class="cell">
-              <label for="compRock">Rock 🪨</label
+              <label for="compRock">Rock ✊</label
               ><input
                 type="radio"
                 name="compInput"
@@ -77,8 +83,20 @@
             </div>
           </div>
         </div>
-        <div class="message" id="message">Click 🪨🖐️✂️ to play!</div>
+        <div class="game-bottom">
+          <div
+            class="message"
+            id="message"
+            data-original="Click ✊🖐️✂️ or press R, P or S on you keyboard to play!"
+          >
+            Click ✊🖐️✂️ or press R, P or S on you keyboard to play!
+          </div>
+          <button class="message" id="gameReset" hidden="hidden">
+            Play Again
+          </button>
+        </div>
       </div>
     </div>
+    <input type="text" hidden="hidden" id="gameOverInput" value="0" />
   </body>
 </html>
